@@ -10,14 +10,14 @@ spec:
     retries:
       retryForever:
         policy: constant
-        duration: 5s
+        duration: 2s
         maxRetries: -1 
 
     circuitBreakers:
       simpleCB:
         maxRequests: 1
         timeout: 5s 
-        trip: consecutiveFailures >= 10
+        trip: consecutiveFailures >= 5
 
   targets:
     components:
