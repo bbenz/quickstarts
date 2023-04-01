@@ -19,5 +19,5 @@ spec:
     spec:
       containers:
       - name: java
-        image: demodaprregistry.azurecr.io/demodaprregistry:v3
+        image: demojavaaks.azurecr.io/demojavaaks:v1
         imagePullPolicy: Always

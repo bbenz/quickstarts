@@ -15,7 +15,7 @@ spec:
       simpleCB:
         maxRequests: 1
         timeout: 5s 
-        trip: consecutiveFailures >= 2
+        trip: consecutiveFailures >= 5
   targets:
     components:
       statestore:

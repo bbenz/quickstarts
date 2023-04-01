@@ -23,15 +23,15 @@ public class OrderProcessingServiceApplication {
 
                     // Get state from the state store
                     State<Order> response = client.getState(DAPR_STATE_STORE, String.valueOf(orderId), Order.class).block();
-                    System.out.println("Java Order: " + response.getValue().getOrderId());
+                    System.out.println("Adding Java Order: " + response.getValue().getOrderId());
 
                     // Delete state from the state store
-                    //client.deleteState(DAPR_STATE_STORE, String.valueOf(orderId)).block();
-                    System.out.println("NOT Deleting Order: " + orderId);
+                    client.deleteState(DAPR_STATE_STORE, String.valueOf(orderId)).block();
+                    System.out.println("Deleting Java Order: " + orderId);
                     TimeUnit.MILLISECONDS.sleep(1500);
                 }
                 catch(Exception e){
-                    System.out.println("Failed to save : " + e.getMessage());
+                    System.out.println("Uh Oh : " + e.getMessage());
                     TimeUnit.MILLISECONDS.sleep(1000);
                 }
             }
